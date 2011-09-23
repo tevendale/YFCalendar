@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17074F311428B7BA006AC1DD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17074F301428B7BA006AC1DD /* QuartzCore.framework */; };
+		17077E7214221D39002358B0 /* YFCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17077E7114221D39002358B0 /* YFCalendarViewController.m */; };
 		17414AC8141D2E1600A77592 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17414AC7141D2E1600A77592 /* UIKit.framework */; };
 		17414ACA141D2E1600A77592 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17414AC9141D2E1600A77592 /* Foundation.framework */; };
 		17414ACC141D2E1600A77592 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17414ACB141D2E1600A77592 /* CoreGraphics.framework */; };
@@ -14,25 +16,41 @@
 		17414AD4141D2E1600A77592 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 17414AD3141D2E1600A77592 /* main.m */; };
 		17414AD8141D2E1600A77592 /* YFCalendarAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 17414AD7141D2E1600A77592 /* YFCalendarAppDelegate.m */; };
 		17414ADB141D2E1600A77592 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17414AD9141D2E1600A77592 /* MainWindow.xib */; };
-		17414ADE141D2E1600A77592 /* YFCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17414ADD141D2E1600A77592 /* YFCalendarViewController.m */; };
-		17414AE1141D2E1600A77592 /* YFCalendarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17414ADF141D2E1600A77592 /* YFCalendarViewController.xib */; };
+		17414AE1141D2E1600A77592 /* YFViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17414ADF141D2E1600A77592 /* YFViewController.xib */; };
+		17414AE9141D318B00A77592 /* YFCalendarDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17414AE8141D318B00A77592 /* YFCalendarDayCell.m */; };
+		17414AEC141D319900A77592 /* YFCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17414AEB141D319900A77592 /* YFCalendarView.m */; };
+		177AE17114262ADF0089F1E5 /* YFCalendarDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177AE17014262ADF0089F1E5 /* YFCalendarDayCell.xib */; };
+		17B0A52B14291B9100053394 /* NSDate-Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B0A52A14291B9100053394 /* NSDate-Categories.m */; };
+		17B36D4A1427D3EC0096BCDA /* YFCalendarDayTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B36D491427D3EC0096BCDA /* YFCalendarDayTableCell.xib */; };
+		17B36D521427D4FF0096BCDA /* YFCalendarDayTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B36D511427D4FF0096BCDA /* YFCalendarDayTableCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		17074F301428B7BA006AC1DD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		17077E7014221D39002358B0 /* YFCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFCalendarViewController.h; sourceTree = "<group>"; };
+		17077E7114221D39002358B0 /* YFCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFCalendarViewController.m; sourceTree = "<group>"; };
 		17414AC3141D2E1600A77592 /* YFCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YFCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17414AC7141D2E1600A77592 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17414AC9141D2E1600A77592 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		17414ACB141D2E1600A77592 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		17414ACF141D2E1600A77592 /* YFCalendar-Info.plist */ = {isa = PBXFileReference; path = "YFCalendar-Info.plist"; sourceTree = "<group>"; };
+		17414ACF141D2E1600A77592 /* YFCalendar-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YFCalendar-Info.plist"; sourceTree = "<group>"; };
 		17414AD1141D2E1600A77592 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		17414AD3141D2E1600A77592 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		17414AD5141D2E1600A77592 /* YFCalendar-Prefix.pch */ = {isa = PBXFileReference; path = "YFCalendar-Prefix.pch"; sourceTree = "<group>"; };
-		17414AD6141D2E1600A77592 /* YFCalendarAppDelegate.h */ = {isa = PBXFileReference; path = YFCalendarAppDelegate.h; sourceTree = "<group>"; };
+		17414AD5141D2E1600A77592 /* YFCalendar-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YFCalendar-Prefix.pch"; sourceTree = "<group>"; };
+		17414AD6141D2E1600A77592 /* YFCalendarAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YFCalendarAppDelegate.h; sourceTree = "<group>"; };
 		17414AD7141D2E1600A77592 /* YFCalendarAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFCalendarAppDelegate.m; sourceTree = "<group>"; };
 		17414ADA141D2E1600A77592 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		17414ADC141D2E1600A77592 /* YFCalendarViewController.h */ = {isa = PBXFileReference; path = YFCalendarViewController.h; sourceTree = "<group>"; };
-		17414ADD141D2E1600A77592 /* YFCalendarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YFCalendarViewController.m; sourceTree = "<group>"; };
-		17414AE0141D2E1600A77592 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/YFCalendarViewController.xib; sourceTree = "<group>"; };
+		17414AE0141D2E1600A77592 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/YFViewController.xib; sourceTree = "<group>"; };
+		17414AE7141D318B00A77592 /* YFCalendarDayCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFCalendarDayCell.h; sourceTree = "<group>"; };
+		17414AE8141D318B00A77592 /* YFCalendarDayCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFCalendarDayCell.m; sourceTree = "<group>"; };
+		17414AEA141D319900A77592 /* YFCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFCalendarView.h; sourceTree = "<group>"; };
+		17414AEB141D319900A77592 /* YFCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFCalendarView.m; sourceTree = "<group>"; };
+		177AE17014262ADF0089F1E5 /* YFCalendarDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YFCalendarDayCell.xib; sourceTree = "<group>"; };
+		17B0A52914291B9100053394 /* NSDate-Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-Categories.h"; sourceTree = "<group>"; };
+		17B0A52A14291B9100053394 /* NSDate-Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-Categories.m"; sourceTree = "<group>"; };
+		17B36D491427D3EC0096BCDA /* YFCalendarDayTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YFCalendarDayTableCell.xib; sourceTree = "<group>"; };
+		17B36D501427D4FF0096BCDA /* YFCalendarDayTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFCalendarDayTableCell.h; sourceTree = "<group>"; };
+		17B36D511427D4FF0096BCDA /* YFCalendarDayTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFCalendarDayTableCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17074F311428B7BA006AC1DD /* QuartzCore.framework in Frameworks */,
 				17414AC8141D2E1600A77592 /* UIKit.framework in Frameworks */,
 				17414ACA141D2E1600A77592 /* Foundation.framework in Frameworks */,
 				17414ACC141D2E1600A77592 /* CoreGraphics.framework in Frameworks */,
@@ -71,6 +90,7 @@
 			children = (
 				17414AC7141D2E1600A77592 /* UIKit.framework */,
 				17414AC9141D2E1600A77592 /* Foundation.framework */,
+				17074F301428B7BA006AC1DD /* QuartzCore.framework */,
 				17414ACB141D2E1600A77592 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
@@ -82,10 +102,20 @@
 				17414AD6141D2E1600A77592 /* YFCalendarAppDelegate.h */,
 				17414AD7141D2E1600A77592 /* YFCalendarAppDelegate.m */,
 				17414AD9141D2E1600A77592 /* MainWindow.xib */,
-				17414ADC141D2E1600A77592 /* YFCalendarViewController.h */,
-				17414ADD141D2E1600A77592 /* YFCalendarViewController.m */,
-				17414ADF141D2E1600A77592 /* YFCalendarViewController.xib */,
+				17414ADF141D2E1600A77592 /* YFViewController.xib */,
+				17414AE7141D318B00A77592 /* YFCalendarDayCell.h */,
+				17414AE8141D318B00A77592 /* YFCalendarDayCell.m */,
+				17414AEA141D319900A77592 /* YFCalendarView.h */,
+				17414AEB141D319900A77592 /* YFCalendarView.m */,
 				17414ACE141D2E1600A77592 /* Supporting Files */,
+				17077E7014221D39002358B0 /* YFCalendarViewController.h */,
+				17077E7114221D39002358B0 /* YFCalendarViewController.m */,
+				177AE17014262ADF0089F1E5 /* YFCalendarDayCell.xib */,
+				17B36D491427D3EC0096BCDA /* YFCalendarDayTableCell.xib */,
+				17B36D501427D4FF0096BCDA /* YFCalendarDayTableCell.h */,
+				17B36D511427D4FF0096BCDA /* YFCalendarDayTableCell.m */,
+				17B0A52914291B9100053394 /* NSDate-Categories.h */,
+				17B0A52A14291B9100053394 /* NSDate-Categories.m */,
 			);
 			path = YFCalendar;
 			sourceTree = "<group>";
@@ -153,7 +183,9 @@
 			files = (
 				17414AD2141D2E1600A77592 /* InfoPlist.strings in Resources */,
 				17414ADB141D2E1600A77592 /* MainWindow.xib in Resources */,
-				17414AE1141D2E1600A77592 /* YFCalendarViewController.xib in Resources */,
+				17414AE1141D2E1600A77592 /* YFViewController.xib in Resources */,
+				177AE17114262ADF0089F1E5 /* YFCalendarDayCell.xib in Resources */,
+				17B36D4A1427D3EC0096BCDA /* YFCalendarDayTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +198,11 @@
 			files = (
 				17414AD4141D2E1600A77592 /* main.m in Sources */,
 				17414AD8141D2E1600A77592 /* YFCalendarAppDelegate.m in Sources */,
-				17414ADE141D2E1600A77592 /* YFCalendarViewController.m in Sources */,
+				17414AE9141D318B00A77592 /* YFCalendarDayCell.m in Sources */,
+				17414AEC141D319900A77592 /* YFCalendarView.m in Sources */,
+				17077E7214221D39002358B0 /* YFCalendarViewController.m in Sources */,
+				17B36D521427D4FF0096BCDA /* YFCalendarDayTableCell.m in Sources */,
+				17B0A52B14291B9100053394 /* NSDate-Categories.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,12 +225,12 @@
 			name = MainWindow.xib;
 			sourceTree = "<group>";
 		};
-		17414ADF141D2E1600A77592 /* YFCalendarViewController.xib */ = {
+		17414ADF141D2E1600A77592 /* YFViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				17414AE0141D2E1600A77592 /* en */,
 			);
-			name = YFCalendarViewController.xib;
+			name = YFViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -286,6 +322,7 @@
 				17414AE6141D2E1600A77592 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

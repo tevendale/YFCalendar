@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@class YFViewController;
 @class YFCalendarViewController;
 
-@interface YFCalendarAppDelegate : NSObject <UIApplicationDelegate>
+@interface YFCalendarAppDelegate : NSObject <UIApplicationDelegate> {
+    
+    
+}
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 
