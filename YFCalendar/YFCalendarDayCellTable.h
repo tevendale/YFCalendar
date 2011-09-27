@@ -1,11 +1,10 @@
 //
-//  YFCalendarDayTableCell.h
+//  YFCalendarDayCellTable.h
 //  YFCalendar
 //
-//  Created by Stuart Tevendale on 19/09/2011.
+//  Created by Stuart Tevendale on 26/09/2011.
 //  Copyright 2011 Yellow Field Technologies Ltd. All rights reserved.
 //
-
 
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -18,10 +17,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface YFCalendarDayTableCell : UITableViewCell {
-    IBOutlet UILabel *cellLabel;
-}
-
-@property (nonatomic, retain) IBOutlet UILabel *cellLabel;
+@interface YFCalendarDayCellTable : UITableView
 
 @end

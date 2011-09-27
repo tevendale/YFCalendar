@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		17074F311428B7BA006AC1DD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17074F301428B7BA006AC1DD /* QuartzCore.framework */; };
 		17077E7214221D39002358B0 /* YFCalendarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17077E7114221D39002358B0 /* YFCalendarViewController.m */; };
+		1720CDCF14325BF300715CF1 /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = 1720CDCE14325BF300715CF1 /* README.markdown */; };
 		17414AC8141D2E1600A77592 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17414AC7141D2E1600A77592 /* UIKit.framework */; };
 		17414ACA141D2E1600A77592 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17414AC9141D2E1600A77592 /* Foundation.framework */; };
 		17414ACC141D2E1600A77592 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17414ACB141D2E1600A77592 /* CoreGraphics.framework */; };
@@ -20,6 +21,7 @@
 		17414AE9141D318B00A77592 /* YFCalendarDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17414AE8141D318B00A77592 /* YFCalendarDayCell.m */; };
 		17414AEC141D319900A77592 /* YFCalendarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17414AEB141D319900A77592 /* YFCalendarView.m */; };
 		177AE17114262ADF0089F1E5 /* YFCalendarDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 177AE17014262ADF0089F1E5 /* YFCalendarDayCell.xib */; };
+		17AD58B6143107DF00168164 /* YFCalendarDayCellTable.m in Sources */ = {isa = PBXBuildFile; fileRef = 17AD58B5143107DF00168164 /* YFCalendarDayCellTable.m */; };
 		17B0A52B14291B9100053394 /* NSDate-Categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B0A52A14291B9100053394 /* NSDate-Categories.m */; };
 		17B36D4A1427D3EC0096BCDA /* YFCalendarDayTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17B36D491427D3EC0096BCDA /* YFCalendarDayTableCell.xib */; };
 		17B36D521427D4FF0096BCDA /* YFCalendarDayTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 17B36D511427D4FF0096BCDA /* YFCalendarDayTableCell.m */; };
@@ -29,6 +31,7 @@
 		17074F301428B7BA006AC1DD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		17077E7014221D39002358B0 /* YFCalendarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFCalendarViewController.h; sourceTree = "<group>"; };
 		17077E7114221D39002358B0 /* YFCalendarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFCalendarViewController.m; sourceTree = "<group>"; };
+		1720CDCE14325BF300715CF1 /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		17414AC3141D2E1600A77592 /* YFCalendar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YFCalendar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		17414AC7141D2E1600A77592 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		17414AC9141D2E1600A77592 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -46,6 +49,8 @@
 		17414AEA141D319900A77592 /* YFCalendarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFCalendarView.h; sourceTree = "<group>"; };
 		17414AEB141D319900A77592 /* YFCalendarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFCalendarView.m; sourceTree = "<group>"; };
 		177AE17014262ADF0089F1E5 /* YFCalendarDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YFCalendarDayCell.xib; sourceTree = "<group>"; };
+		17AD58B4143107DF00168164 /* YFCalendarDayCellTable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YFCalendarDayCellTable.h; sourceTree = "<group>"; };
+		17AD58B5143107DF00168164 /* YFCalendarDayCellTable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YFCalendarDayCellTable.m; sourceTree = "<group>"; };
 		17B0A52914291B9100053394 /* NSDate-Categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate-Categories.h"; sourceTree = "<group>"; };
 		17B0A52A14291B9100053394 /* NSDate-Categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate-Categories.m"; sourceTree = "<group>"; };
 		17B36D491427D3EC0096BCDA /* YFCalendarDayTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YFCalendarDayTableCell.xib; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 		17414AB8141D2E1400A77592 = {
 			isa = PBXGroup;
 			children = (
+				1720CDCE14325BF300715CF1 /* README.markdown */,
 				17414ACD141D2E1600A77592 /* YFCalendar */,
 				17414AC6141D2E1600A77592 /* Frameworks */,
 				17414AC4141D2E1600A77592 /* Products */,
@@ -105,17 +111,19 @@
 				17414ADF141D2E1600A77592 /* YFViewController.xib */,
 				17414AE7141D318B00A77592 /* YFCalendarDayCell.h */,
 				17414AE8141D318B00A77592 /* YFCalendarDayCell.m */,
+				177AE17014262ADF0089F1E5 /* YFCalendarDayCell.xib */,
 				17414AEA141D319900A77592 /* YFCalendarView.h */,
 				17414AEB141D319900A77592 /* YFCalendarView.m */,
 				17414ACE141D2E1600A77592 /* Supporting Files */,
 				17077E7014221D39002358B0 /* YFCalendarViewController.h */,
 				17077E7114221D39002358B0 /* YFCalendarViewController.m */,
-				177AE17014262ADF0089F1E5 /* YFCalendarDayCell.xib */,
 				17B36D491427D3EC0096BCDA /* YFCalendarDayTableCell.xib */,
 				17B36D501427D4FF0096BCDA /* YFCalendarDayTableCell.h */,
 				17B36D511427D4FF0096BCDA /* YFCalendarDayTableCell.m */,
 				17B0A52914291B9100053394 /* NSDate-Categories.h */,
 				17B0A52A14291B9100053394 /* NSDate-Categories.m */,
+				17AD58B4143107DF00168164 /* YFCalendarDayCellTable.h */,
+				17AD58B5143107DF00168164 /* YFCalendarDayCellTable.m */,
 			);
 			path = YFCalendar;
 			sourceTree = "<group>";
@@ -186,6 +194,7 @@
 				17414AE1141D2E1600A77592 /* YFViewController.xib in Resources */,
 				177AE17114262ADF0089F1E5 /* YFCalendarDayCell.xib in Resources */,
 				17B36D4A1427D3EC0096BCDA /* YFCalendarDayTableCell.xib in Resources */,
+				1720CDCF14325BF300715CF1 /* README.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +212,7 @@
 				17077E7214221D39002358B0 /* YFCalendarViewController.m in Sources */,
 				17B36D521427D4FF0096BCDA /* YFCalendarDayTableCell.m in Sources */,
 				17B0A52B14291B9100053394 /* NSDate-Categories.m in Sources */,
+				17AD58B6143107DF00168164 /* YFCalendarDayCellTable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

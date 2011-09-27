@@ -1,11 +1,10 @@
 //
-//  YFCalendarDayTableCell.m
+//  YFCalendarDayCellTable.m
 //  YFCalendar
 //
-//  Created by Stuart Tevendale on 19/09/2011.
+//  Created by Stuart Tevendale on 26/09/2011.
 //  Copyright 2011 Yellow Field Technologies Ltd. All rights reserved.
 //
-
 
 // THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 // IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -16,27 +15,18 @@
 // SOFTWARE.
 
 
-#import "YFCalendarDayTableCell.h"
-#import "YFCalendarDayCell.h"
+#import "YFCalendarDayCellTable.h"
 
-@implementation YFCalendarDayTableCell
+@implementation YFCalendarDayCellTable
 
-@synthesize cellLabel;
-
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
+- (id)init
 {
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
+    self = [super init];
     if (self) {
-        // Initialization code
+        // Initialization code here.
     }
+    
     return self;
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {

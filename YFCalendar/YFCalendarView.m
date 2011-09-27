@@ -1,24 +1,20 @@
-/*
- Copyright (c) 2006 by Logan Design, http://www.burgundylogan.com/
- 
- Permission is hereby granted, free of charge, to any person obtaining a
- copy of this software and associated documentation files (the "Software"),
- to deal in the Software without restriction, including without limitation
- the rights to use, copy, modify, merge, publish, distribute, sublicense,
- and/or sell copies of the Software, and to permit persons to whom the
- Software is furnished to do so, subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included in
- all copies or substantial portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
- THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
- OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
- SOFTWARE.
- */
+//
+//  YFCalendarView.m
+//  YFCalendar
+//
+//  Created by Stuart Tevendale on 15/09/2011.
+//  Copyright 2011 Yellow Field Technologies Ltd. All rights reserved.
+//
+
+// Loosely based on LRCalendar, Copyright (c) 2006 by Logan Design, http://www.burgundylogan.com/
+
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+// THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
+// OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
 
 #import "YFCalendarView.h"
 #import "YFCalendarDayCell.h"
@@ -52,6 +48,8 @@
 @synthesize selectedObject;
 
 @synthesize focusDate;
+
+@synthesize swipeDelegate;
 
 
 
@@ -89,6 +87,61 @@
 
 - (BOOL)acceptsFirstResponder {
     return YES; 
+}
+
+#pragma mark -
+#pragma mark Swipe Methods
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"In YFCalendarView touchesBegan");
+    CGPoint pt;
+    NSSet *allTouches = [event allTouches];
+    if ([allTouches count] == 1) {
+        UITouch *touch = [[allTouches allObjects] objectAtIndex:0];
+        if ([touch tapCount] == 1) {
+            pt = [touch locationInView:self];
+            touchBeganX = pt.x;
+            touchBeganY = pt.y;
+        }
+    }
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"In YFCalendarView touchesMoved");
+    CGPoint pt;
+    NSSet *allTouches = [event allTouches];
+    if ([allTouches count] == 1) {
+        UITouch *touch = [[allTouches allObjects] objectAtIndex:0];
+        if ([touch tapCount] == 1) {
+            pt = [touch locationInView:self];
+            touchMovedX = pt.x;
+            touchMovedY = pt.y;
+        }
+    }
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    NSLog(@"In YFCalendarView touchesEnded");
+    NSSet *allTouches = [event allTouches];
+    if ([allTouches count] == 1) {
+        int diffX = touchMovedX - touchBeganX;
+        int diffY = touchMovedY - touchBeganY;
+        if (diffY >= -20 && diffY <= 20) {
+            if (diffX > 20) {
+                //NSLog(@"swipe right");
+                if (swipeDelegate) [swipeDelegate viewDidSwipeRight:self];
+            } else if (diffX < -20) {
+                //NSLog(@"swipe left");
+                if (swipeDelegate) [swipeDelegate viewDidSwipeLeft:self];
+            }
+        }
+    }
+}
+
+- (void)dealloc {
+    if (swipeDelegate) [swipeDelegate release];
+    [super dealloc];
 }
 
 

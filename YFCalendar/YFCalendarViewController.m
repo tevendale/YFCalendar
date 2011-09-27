@@ -6,6 +6,17 @@
 //  Copyright 2011 Yellow Field Technologies Ltd. All rights reserved.
 //
 
+// Loosely based on LRCalendar, Copyright (c) 2006 by Logan Design, http://www.burgundylogan.com/
+
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL
+// THE COPYRIGHT HOLDER BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
+// OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
+
+
 #import "YFCalendarViewController.h"
 #import "YFCalendarView.h"
 #import "YFCalendarDayCell.h"
@@ -42,6 +53,7 @@
     
     // get the current Calendar type
     calendarView.currentCalendar = [NSCalendar currentCalendar];
+    calendarView.swipeDelegate = self;
     
     calendarView.focusDate = [[NSDate date] dateWithoutTime];
     
@@ -117,7 +129,7 @@
             tableView.cellTableView.dataSource = tableView;
             tableView.cellTableView.delegate = tableView;
             tableView.controller = self;
-        			
+       			
 			[calendarView addSubview:tableView];
 			
 			[calendarView.calendarCellsDictionary setObject:tableView forKey:[[NSNumber numberWithInt:k++] stringValue]];
@@ -187,19 +199,6 @@
 		if( [[dateArray objectAtIndex:i] objectForKey:@"Object"] == object )
 			selectedIndex = i;
 	}
-	
-	if( selectedIndex != -1 ) {
-		
-		for( i=0; i<[calendarView.calendarCellsDictionary count]; i++ ) {
-			
-			/*if( [[[[[calendarCellsDictionary objectForKey:[[NSNumber numberWithInt:i] stringValue]] documentView] date] description] isEqualToString:[date description]] ) {
-             
-             UIScrollView *currentCell = [calendarCellsDictionary objectForKey:[[NSNumber numberWithInt:i] stringValue]];
-             [[currentCell documentView] selectRow:(selectedIndex+1) byExtendingSelection:NO];
-             }*/
-		}
-	}
-	
 }
 
 
@@ -231,16 +230,11 @@
 {
 	CGRect rect = [calendarView bounds];
 	
-	// Hide all TableViews and set the RowHeight
-	id object;
+	// Hide all DayCells
+    id object;
 	NSEnumerator *tableViewsEnumerator = [calendarView.calendarCellsDictionary objectEnumerator];
 	while( object = [tableViewsEnumerator nextObject] ) {
 		[object setHidden:YES];
-		
-		/*if( _currentView == kMonthlyView )
-         [[object documentView] setRowHeight:18.0];
-         else if( _currentView == kWeeklyView )
-         [[object documentView] setRowHeight:50.0];*/
 	}
 	
 	
@@ -289,7 +283,6 @@
 	int numberOfDaysOffset = 0;
 	
 	// Draw Month Title
-    // For UIView
     calendarView.currentMonthField.text = [NSString stringWithFormat:@"%@ %d", [calendarView.focusDate getMonthName], [calendarView.focusDate getYear]];
     calendarView.currentMonthField.frame = CGRectMake( rect.size.width/2 - 200, 9, 400, 25 );
 	calendarView.leftButton.frame = CGRectMake( rect.size.width-104, 5, 25, 20 );
@@ -298,7 +291,6 @@
 
 	
 	// Locate Day Titles
-    // For UIView
     [calendarView.sundayField setFrame:CGRectMake(0 - numberOfDaysOffset, 31, cellWidth+1, 20 )];
 	[calendarView.mondayField setFrame:CGRectMake( cellWidth - numberOfDaysOffset, 31, cellWidth+1, 20 )];
 	[calendarView.tuesdayField setFrame:CGRectMake( 2*cellWidth - numberOfDaysOffset, 31, cellWidth+1, 20 )];
@@ -320,15 +312,18 @@
 			NSDate *calendarDate = [currentDate dateWithoutTime];
 			
 			CGRect rect;
-            // For UIView
-            if( weekRowCount == 1 )
+            if( weekRowCount == 1 ) {
 				rect = CGRectMake( j*cellWidth - numberOfDaysOffset, (i-1)*cellHeight + 51, cellWidth+1, cellHeight+1 );
-			if( weekRowCount == 4 )
+            }
+			if( weekRowCount == 4 ) {
 				rect = CGRectMake( j*cellWidth - numberOfDaysOffset, (i-2)*cellHeight + 51, cellWidth+1, cellHeight+1 );
-			else if( weekRowCount == 5 )
+            }
+			else if( weekRowCount == 5 ) {
 				rect = CGRectMake( j*cellWidth - numberOfDaysOffset, (i-1)*cellHeight + 51, cellWidth+1, cellHeight+1 );
-			else if( weekRowCount == 6 )
+            }
+			else if( weekRowCount == 6 ) {
 				rect = CGRectMake( j*cellWidth - numberOfDaysOffset, (i-1)*cellHeight + 51, cellWidth+1, cellHeight+1 );
+            }
 
 			
 			currentCell.frame = rect;
@@ -356,25 +351,29 @@
 	
 	YFCalendarDayCell *object;
 	NSEnumerator *tableViewsEnumerator = [calendarView.calendarCellsDictionary objectEnumerator];
-	while( object = (YFCalendarDayCell *)[tableViewsEnumerator nextObject] ) {
+	while(object = (YFCalendarDayCell *)[tableViewsEnumerator nextObject]) {
 		
 		NSDate *calendarDate = [object date];
         
 		
 		// Dim Dates from Other Months, if we're in Monthly View
-		if( [[calendarDate dateWithoutTime] getMonthOfYear] != [calendarView.focusDate getMonthOfYear])
+		if( [[calendarDate dateWithoutTime] getMonthOfYear] != [calendarView.focusDate getMonthOfYear]) {
 			object.cellTableView.backgroundColor = [UIColor colorWithRed:0.96 green:0.96 blue:0.96 alpha:1.0];
+        }
 		
 		// Color Today
-		else if( [[calendarDate dateWithoutTime] isEqualToDate:[[NSDate date] dateWithoutTime]] ) 
+		else if([[calendarDate dateWithoutTime] isEqualToDate:[[NSDate date] dateWithoutTime]]) {
 			object.cellTableView.backgroundColor = [UIColor colorWithRed:0.92 green:0.95 blue:0.98 alpha:0.9];
+        }
 		
 		// Color Focus Date
-		else if( [[calendarDate dateWithoutTime] isEqualToDate:[calendarView.focusDate dateWithoutTime]] )
+		else if([[calendarDate dateWithoutTime] isEqualToDate:[calendarView.focusDate dateWithoutTime]]) {
 			object.cellTableView.backgroundColor = [UIColor colorWithRed:0.92 green:0.95 blue:0.98 alpha:1.0];
+        }
 		
-		else
+		else {
 			object.cellTableView.backgroundColor = [UIColor whiteColor];
+        }
 	}
 }
 
@@ -416,9 +415,29 @@
 		newDate = [NSDate date];
 	
 	calendarView.focusDate = [[NSDate alloc] initWithString:[newDate description]];
+    [self drawCalendar];
+}
+
+- (void)showNextMonth {
+	[self deselectAll];
+    
+    NSDate *newDate = [calendarView.focusDate addMonthsToDate:1];
+	
+	calendarView.focusDate = [[NSDate alloc] initWithString:[newDate description]];
     
 	[self drawCalendar];
 }
+
+- (void)showPreviousMonth {
+	[self deselectAll];
+    
+    NSDate *newDate = [calendarView.focusDate addMonthsToDate:-1];
+	
+	calendarView.focusDate = [[NSDate alloc] initWithString:[newDate description]];
+    
+	[self drawCalendar];
+}
+
 
 - (void)setFocusDate:(NSDate*)date {
 	
@@ -436,22 +455,34 @@
 
 - (void)addExampleEvents {
 	[self addObject:[NSNumber numberWithInt:1]
-				  withTitle:@"Yesterday!"
+				  withTitle:@"Yesterday"
 			 atCalendarDate:[[NSDate date] addDaysToDate:-1]];
 	
 	[self addObject:[NSDictionary dictionaryWithObject:[NSNumber numberWithInt:2] forKey:@"Number"]
-				  withTitle:@"Today! Today! Today! Today! Today! Today! Today! Today! Today!"
+				  withTitle:@"Today"
 			 atCalendarDate:[NSDate date]];
 	
 	[self addObject:[NSArray arrayWithObjects:[NSNumber numberWithInt:3], [NSNumber numberWithInt:4], [NSNumber numberWithInt:5], nil]
-				  withTitle:@"Today 2!"
+				  withTitle:@"Today 2"
 			 atCalendarDate:[NSDate date]];
 	
 	[self addObject:nil
-				  withTitle:@"Tomorrow!"
+				  withTitle:@"Tomorrow"
 			 atCalendarDate:[[NSDate date] addDaysToDate:1]];
     
     [self drawCalendar];
+}
+
+
+#pragma mark -
+#pragma mark Swipe Delegate Methods
+
+- (void)viewDidSwipeLeft:(YFCalendarView *)swipeView {
+    NSLog(@"swipe left");
+}
+
+- (void)viewDidSwipeRight:(YFCalendarView *)swipeView {
+    NSLog(@"swipe right");
 }
 
 
