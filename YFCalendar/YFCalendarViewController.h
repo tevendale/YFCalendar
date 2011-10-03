@@ -47,6 +47,8 @@
 - (void)selectionDidChange:(YFCalendarDayCell *)cell;
 
 - (IBAction)changeDateIncrementally:(id)sender;
+- (IBAction)showNextMonth:(id)sender;
+- (IBAction)showPreviousMonth:(id)sender;
 - (void)setFocusDate:(NSDate*)date;
 - (NSDate *)focusDate;
 

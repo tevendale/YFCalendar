@@ -423,7 +423,7 @@
     
     NSDate *newDate = [calendarView.focusDate addMonthsToDate:1];
 	
-	calendarView.focusDate = [[NSDate alloc] initWithString:[newDate description]];
+	calendarView.focusDate = [newDate copy];
     
 	[self drawCalendar];
 }
@@ -433,7 +433,7 @@
     
     NSDate *newDate = [calendarView.focusDate addMonthsToDate:-1];
 	
-	calendarView.focusDate = [[NSDate alloc] initWithString:[newDate description]];
+	calendarView.focusDate = [newDate copy];
     
 	[self drawCalendar];
 }
@@ -441,7 +441,7 @@
 
 - (void)setFocusDate:(NSDate*)date {
 	
-	calendarView.focusDate = [[NSDate alloc] initWithString:[date description]];
+	calendarView.focusDate = [date copy];
 	[self colorCells];
 }
 
